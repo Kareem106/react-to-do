@@ -14,8 +14,8 @@ function App() {
   },[theme])
   return (
     <>
-    <div className="container mx-auto">
-      <div className="w-full lg:w-1/2 mx-auto p-4">
+    <div className="container mx-auto relative min-h-screen">
+      <div className="w-full lg:w-1/2 mx-auto p-4 pb-20">
       <div className="py-4 flex justify-between items-center">
         <h1 className="text-3xl font-bold">TODO</h1>
         <ThemeController/>
@@ -33,9 +33,12 @@ function App() {
         </div>
         <div className="flex flex-col gap-2">
         {
-          items?.map(item=><ListItem key={item?.id} {...item}/>)
+          items?.map(item=><ListItem key={item?.id} {...item}/>).reverse()
         }
         </div>
+      </div>
+      <div className='text-center absolute w-full top-full -translate-y-full p-2'>
+        @kareem ahmed
       </div>
     </div>
     </>
